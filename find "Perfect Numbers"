@@ -1,0 +1,27 @@
+//задача на нахождение совершенных чисел в заданном диапазоне
+
+function getPerfect(num1, num2) {
+    
+  let arr = [];
+  let perfectArr = [];
+
+  for(let i = num1; i <= num2; i++) {
+    if(i % 2 === 0) {
+      arr.push(i)
+    } 
+  };
+  
+  let arr2 = arr.forEach( num => {
+    let result = null;
+    for (let i = 1; i <= num / 2; i +=1) {
+      if (num % i === 0) {result += i;}
+    }
+  
+    if (result === num) {
+      perfectArr.push(result);
+    }
+  })
+
+  console.log(perfectArr);
+}
+getPerfect(1, 30)
