@@ -1,0 +1,28 @@
+//Задача на определение "дружественных чисел"
+//Check if the given two numbers are friendly pair or not
+
+function isFriendly(num1, num2) {
+  let sum1 = getSum( getOwnDivisiors(num1) );
+  let sum2 = getSum( getOwnDivisiors(num2) );
+
+  (sum1 !== num2) ? return false : return true;
+
+  function getOwnDivisiors(num) {
+     let arr = [];
+     for(let i = 1; i <  num; i++) {
+       if(num % i === 0) {
+         arr.push(i)
+       }
+     }
+     
+    return arr;
+  }
+
+  function getSum(arr) {
+    return arr = arr.reduce( (sum, value) => sum + value)
+  }
+}
+isFriendly(2620, 2924)
+}
+
+
