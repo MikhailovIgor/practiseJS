@@ -1,0 +1,16 @@
+//Рекурсивная функция для вычисления числа Фиббоначи по индексу
+
+function getFib(index) {
+  if(index === 0) {
+  return 0
+  } else if(index === 1 || index === 2) {
+  return 1
+  } else {
+    let num = getFib(index - 1) + getFib(index - 2);
+    return num; 
+  }
+}
+  
+  
+
+
