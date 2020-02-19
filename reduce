@@ -1,0 +1,15 @@
+/*Write a script that takes an array of functions and returns a new function that takes a number. 
+After calling the returned function, all functions from the array are sequentially called with the value assigned to them 
+and give the result */
+
+let arrayOfFuncs = [
+  function(result) {return result +=1},
+  function(result) {return result+=3},
+  function(result) {return result *=10},
+];
+
+function start(arr) {  
+let result = arr.reduce( (accumulator, currentFunc) => currentFunc(accumulator), 3)
+}
+
+ start(arrayOfFuncs);
