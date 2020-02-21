@@ -1,0 +1,38 @@
+const arr =  ['кек', 
+            'Я ем змея', 
+            'Тя, Дуся, судят', 
+            'не палиндром'];
+            
+//first solution
+
+const findPalindroms = (arr) => arr.reduce((acc, word) => {
+  const wordOnlyFromLetters = word.toLowerCase().replace(/[^А-Яа-яA-Za-z]/g, '');
+  const reversedWord = wordOnlyFromLetters.split('').reverse().join('');
+  
+  if (wordOnlyFromLetters === reversedWord) {
+    acc.push(word);
+  }
+  
+  return acc
+}, []);
+
+// second solution
+function findPalindroms(arr) {
+  let arr2 = [];
+  let result = []
+  arr.forEach(elem => {
+     elem = elem.toLowerCase();
+     let elem2 = elem.replace(/[\s.,%]/g, '');
+     arr2.push(elem2)
+  })
+  
+  arr2.forEach(elem => {
+    let reversedElem = elem.split('').reverse().join('');
+    if(elem === reversedElem) {
+      arr3.push(reversedElem)
+    }
+  })
+  return result;
+}
+
+findPalindroms(arr)
