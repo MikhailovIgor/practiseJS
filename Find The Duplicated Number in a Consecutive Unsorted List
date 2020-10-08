@@ -1,0 +1,6 @@
+function findDup( arr ){
+ 
+  const duplicateValue = Number( arr.sort((a, b) => a-b).filter((item, index) => arr.indexOf(item) !== index));
+  
+  return duplicateValue;
+}
