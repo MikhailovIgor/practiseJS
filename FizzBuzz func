@@ -1,0 +1,23 @@
+const fizzbuzz = (n) => {
+let arr = [];
+for (let i = 1; i <= n; ++i) {
+  let item = 0 + i;
+  arr.push(item)
+};
+
+  let result = [];
+  arr.forEach(element => {
+    const fizz = element % 3;
+    const buzz = element % 5;
+
+    if(fizz === 0 && buzz !== 0) {
+      result.push('Fizz')
+    } 
+    else if( buzz === 0 && fizz !== 0) {
+    result.push('Buzz');
+  }
+    else if(element % 3 === 0 && element % 5 === 0) {
+    result.push('FizzBuzz');
+  }
+    else result.push(element);
+});
