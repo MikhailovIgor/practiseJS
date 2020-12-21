@@ -13,3 +13,20 @@ let result = arr.reduce( (accumulator, currentFunc) => currentFunc(accumulator),
 }
 
  start(arrayOfFuncs);
+ 
+ /////////////////////////////////////////////////////////////////////////////////////
+ 
+  /*Write a script that takes an array of objects and returns a new object with some data*/
+ 
+ const items = [
+  {item_id: 2157, quantity: 1},
+  {item_id: 2165, quantity: 2},
+  {item_id: 21635, quantity: 3},
+];
+
+const result = items.reduce((acc, cur, ind) => {
+  Object.entries(cur).forEach(item => acc[`${item[0]}_${ind}`] = item[1])
+  return acc;
+} )
+ 
+ 
