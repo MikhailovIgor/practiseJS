@@ -1,4 +1,4 @@
-/*Write a script that takes an array of functions and returns a new function that takes a number. 
+/ *Write a script that takes an array of functions and returns a new function that takes a number. 
 After calling the returned function, all functions from the array are sequentially called with the value assigned to them 
 and give the result */
 
@@ -16,7 +16,7 @@ let result = arr.reduce( (accumulator, currentFunc) => currentFunc(accumulator),
  
  /////////////////////////////////////////////////////////////////////////////////////
  
-  /*Write a script that takes an array of objects and returns a new object with some data*/
+  /* Write a script that takes an array of objects and returns a new object with some data */
  
  const items = [
   {item_id: 2157, quantity: 1},
@@ -28,5 +28,19 @@ const result = items.reduce((acc, cur, ind) => {
   Object.entries(cur).forEach(item => acc[`${item[0]}_${ind}`] = item[1])
   return acc;
 } )
+ 
+ /////////////////////////////////////////////////////////////////////////////////////
+ 
+ /* Write a script that takes a string and returns a number of occurrences of each character in the string */
+ 
+ function count(string) {
+
+  let arr = string.split('').reduce((amount, item) => {
+    amount[item] ? amount[item]++ : amount[item] = 1;
+    return amount;
+  }, {});
+  
+  return Object.entries(arr);
+}
  
  
