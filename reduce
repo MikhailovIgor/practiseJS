@@ -42,5 +42,31 @@ const result = items.reduce((acc, cur, ind) => {
   
   return Object.entries(arr);
 }
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+  /* Write a script that takes an array of objects and returns a new object with some data and id of object is placed as key */
+
+const arr = [
+  { id: 'asdas232-sa1', name: 'Вася', age: 25 },
+  { id: 'd223a57b-bh4', name: 'Петя', age: 30 },
+  { id: 'b321a76-gt8', name: 'Маша', age: 29 },
+];
+
+const transformToObj = (arr) => arr.reduce((acc, item) => {
+const {id, ...rest} = item;
+  return {
+  ...acc,
+  [item['id']]: rest
+  }
+}, {});
  
+ /*  another solution  */
+function transformToObject(arr) {
+  return arr.reduce((acc, {id, name, age}) => {
+    acc[id] = {name, age}
+    return acc
+  }, {})
+}
  
+//////////////////////////////////////////////////////////////////////////////////////
